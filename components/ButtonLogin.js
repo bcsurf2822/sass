@@ -2,12 +2,12 @@ import Link from "next/link";
 
 const ButtonLogin = ({isLoggedIn, name}) => {
   if(isLoggedIn) {
-    return <Link href="/dashboard">Welcome back {name} 
+    return <Link className="btn btn-primary" href="/dashboard">Welcome back {name} 
     
     {/* {children} */}
     </Link>;
   } else {
-    return <button>Log In</button>
+    return <button className="btn0">Log In</button>
   }
 };
 

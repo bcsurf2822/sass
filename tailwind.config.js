@@ -1,4 +1,5 @@
-/** @type {import('tailwindcss').Config} */
+const { default: daisyui } = require('daisyui');
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,14 +8,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+    
     },
   },
   plugins: [
     require('daisyui')
+    
   ],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"]
+  }
 };
