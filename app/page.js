@@ -1,16 +1,19 @@
-import Image from "next/image";
-import Link from "next/link";
+import ButtonLogin from "@/components/ButtonLogin";
 
 export default function Home() {
+  const isLoggedIn = true;
+  const name = "ben";
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-
-<h1>Collect customer feedback to build better products</h1>
-<p>Create a feedback board in minuites, build products that your customers will love!</p>
-{/* a causes a refresh */}
-{/* link will be almost instant */}
-<Link href="/dashboard">Dash</Link>
-
+    <main className="">
+      <h1>Collect customer feedback to build better products</h1>
+      <p>
+        Create a feedback board in minuites, build products that your customers
+        will love!
+      </p>
+      <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+        {/* everthing in between the opening and closing tags is considered children */}
+        {/* <div>This is children</div> */}
+      {/* </ButtonLogin> */}
     </main>
   );
 }
