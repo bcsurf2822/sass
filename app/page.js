@@ -131,6 +131,3 @@ export default function Home() {
     </main>
   );
 }
-
-// SVG Scalable Vector Graphic (group of vectors of how to create image SVG is much smoother)
-// SVG is much faster - tons of svg libraries
