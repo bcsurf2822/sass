@@ -1,7 +1,8 @@
+import Image from "next/image";
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
 import productDemo from "@/public/productDemo.jpeg";
-import Image from "next/image";
+
 
 
 export default function Home() {
