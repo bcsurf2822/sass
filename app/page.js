@@ -35,8 +35,11 @@ export default function Home() {
       </section>
       {/* HERO */}
       <section className="text-center lg:text-left py-32 px-8 max-w-5xl mx-auto flex flex-col items-center  lg:flex-row gap-14 lg:items-start">
-        {/* object- helps with orientation */}
-        <Image className="w-96 rounded-xl " src={productDemo} alt="product demo" />
+        <Image
+          className="w-96 rounded-xl "
+          src={productDemo}
+          alt="product demo"
+        />
         <div>
           <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 ">
             Collect customer feedback to build better products
