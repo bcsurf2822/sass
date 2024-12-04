@@ -1,5 +1,7 @@
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
+import Image from "next/image";
+import productDemo from "@/public/productDemo.jpeg";
 
 export default function Home() {
   const isLoggedIn = true;
@@ -16,11 +18,15 @@ export default function Home() {
     <main>
       {/* HEADER */}
       <section className="bg-base-200">
-        <div className="flex justify-between items-center px-8 py-2 mx-auto max-w-3xl  ">
+        <div className="flex justify-between items-center px-8 py-2 mx-auto max-w-5xl  ">
           <div className="font-bold">CodeFast SAAS</div>
           <div className="space-x-4  max-md:hidden">
-            <a className="link">Pricing</a>
-            <a className="link">FAQ</a>
+            <a className="link" href="#pricing">
+              Pricing
+            </a>
+            <a className="link" href="#faq">
+              FAQ
+            </a>
           </div>
           <div>
             <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
@@ -28,21 +34,25 @@ export default function Home() {
         </div>
       </section>
       {/* HERO */}
-      <section className="text-center py-32 px-8 max-w-3xl mx-auto">
-        <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
-          Collect customer feedback to build better products
-        </h1>
-        <p className="opacity-90 mb-10">
-          Create a feedback board in minuites, build products that your
-          customers will love!
-        </p>
-        <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
-        {/* everthing in between the opening and closing tags is considered children */}
-        {/* <div>This is children</div> */}
-        {/* </ButtonLogin> */}
+      <section className="text-center lg:text-left py-32 px-8 max-w-5xl mx-auto flex flex-col items-center  lg:flex-row gap-14 lg:items-start">
+        {/* object- helps with orientation */}
+        <Image className="w-96 rounded-xl " src={productDemo} alt="product demo" />
+        <div>
+          <h1 className="text-4xl lg:text-5xl font-extrabold mb-6 ">
+            Collect customer feedback to build better products
+          </h1>
+          <p className="opacity-90 mb-10">
+            Create a feedback board in minuites, build products that your
+            customers will love!
+          </p>
+          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+          {/* everthing in between the opening and closing tags is considered children */}
+          {/* <div>This is children</div> */}
+          {/* </ButtonLogin> */}
+        </div>
       </section>
       {/*  PRICING*/}
-      <section className="bg-base-200">
+      <section id="pricing" className="bg-base-200">
         <div className="py-32 px-8 max-w-3xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary mb-4">
             pricing
@@ -86,7 +96,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-base-200">
+      <section id="faq" className="bg-base-200">
         <div className="py-32 px-8 max-w-3xl mx-auto">
           <p className="text-sm uppercase font-medium text-center text-primary mb-4">
             FAQ
@@ -109,7 +119,7 @@ export default function Home() {
                 answer: "Lorem Epsum e peoiLorem Epsum e peoi",
               },
               {
-                question: "What Do I Get?",
+                question: "How Do I Get It?",
                 answer: "Lorem Epsum e peoiLorem Epsum e peoi",
               },
             ].map((qa) => (
