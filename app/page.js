@@ -1,7 +1,8 @@
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
-import Image from "next/image";
 import productDemo from "@/public/productDemo.jpeg";
+import Image from "next/image";
+
 
 export default function Home() {
   const isLoggedIn = true;
@@ -49,9 +50,6 @@ export default function Home() {
             customers will love!
           </p>
           <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
-          {/* everthing in between the opening and closing tags is considered children */}
-          {/* <div>This is children</div> */}
-          {/* </ButtonLogin> */}
         </div>
       </section>
       {/*  PRICING*/}
