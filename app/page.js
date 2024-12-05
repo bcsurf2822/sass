@@ -3,8 +3,6 @@ import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
 import productDemo from "@/public/productDemo.jpeg";
 
-
-
 export default function Home() {
   const isLoggedIn = true;
   const name = "Ben";
