@@ -6,6 +6,7 @@ import Google from "next-auth/providers/google";
 
 const config = {
   providers: [
+    // reference production checklist video when push google auth to deployment it requries registering dns and for some checks to take place
     Google({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
