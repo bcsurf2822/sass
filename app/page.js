@@ -2,10 +2,16 @@ import Image from "next/image";
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
 import productDemo from "@/public/productDemo.jpeg";
+import { auth } from "@/auth";
 
-export default function Home() {
-  const isLoggedIn = true;
-  const name = "Ben";
+
+// async becasue of const session "await"
+export default async function Home() {
+  // const isLoggedIn = true;
+  // const name = "Ben";
+  // function needs to be async to have an await function
+  // gettin gback session and user
+  const session = await auth();
 
   const pricingFeaturesList = [
     "Collect Customer Feedback",
@@ -29,7 +35,7 @@ export default function Home() {
             </a>
           </div>
           <div>
-            <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+            <ButtonLogin session={session} />
           </div>
         </div>
       </section>
@@ -48,7 +54,7 @@ export default function Home() {
             Create a feedback board in minuites, build products that your
             customers will love!
           </p>
-          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+          <ButtonLogin session={session} />
         </div>
       </section>
       {/*  PRICING*/}
@@ -86,11 +92,7 @@ export default function Home() {
                 );
               })}
             </ul>
-            <ButtonLogin
-              isLoggedIn={isLoggedIn}
-              name={name}
-              extraStyle="w-full"
-            />
+            <ButtonLogin session={session} extraStyle="w-full" />
           </div>
         </div>
       </section>

@@ -19,6 +19,7 @@ const config = {
   adapter: MongoDBAdapter(clientPromise),
 };
 
+// auth checks if user has valid session
 export const { handlers, signIn, signOut, auth } = NextAuth(config);
 
 // npm install @auth/mongodb-adapter
