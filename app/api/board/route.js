@@ -10,7 +10,6 @@ export async function POST(req) {
   try {
     const body = await req.json();
     if (!body.name) {
-      // return error
       // format in json fromat takes 2 params the data and metadata status
       return NextResponse.json(
         { error: "Board Name is Required" },
@@ -36,10 +35,12 @@ export async function POST(req) {
     });
 
     user.boards.push(board._id);
+
     await user.save();
 
-    return NextResponse.json();
-
+    // return NextResponse.json({ success: true });
+    // or
+        return NextResponse.json(board);
   } catch (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
