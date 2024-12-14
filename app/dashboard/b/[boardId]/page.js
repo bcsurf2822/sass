@@ -48,8 +48,10 @@ export default async function FeedbackBoard({ params }) {
       </section>
       <section className="max-w-5xl mx-auto px-5 py-12 space-y-12">
               <h1 className="text-xl font-extrabold mb-4">{board.name}</h1>
-              <CardBoardLink boardId={board._id} />
-              <ButtonDeleteBoard  boardId={board._id} />
+              {/*  .toString() turns it from an advanced data type fixing erors such as :
+              Only plain objects can be passed to Client Components from Server Components. Objects with toJSON methods are not supported. */}
+              <CardBoardLink boardId={board._id.toString()} />
+              <ButtonDeleteBoard  boardId={board._id.toString()} />
       </section>
 
     </main>

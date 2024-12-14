@@ -8,7 +8,6 @@ import toast from "react-hot-toast";
 export default function ButtonDeleteBoard({ boardId }) {
   const router = useRouter();
 
-  
   const handleDeleteBoard = async () => {
     try {
       // will gen a bullion
