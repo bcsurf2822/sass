@@ -1,7 +1,40 @@
-import Link from "next/link";
+"use client";
+
+import axios from "axios";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const ButtonCheckout = () => {
-  return <Link href="/dashboard">Checkout Button</Link>;
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubscribe = async () => {
+    if (isLoading) return;
+    setIsLoading(true);
+
+    try {
+      const response = await axios.post("/api/billing/create-checkout", {
+        successUrl: window.location.href + "/success",
+        cancelUrl: window.location.href,
+      });
+
+      const checkoutUrl = response.data.url;
+
+      window.location.href = checkoutUrl;
+    } catch (error) {
+      const errorMessage =
+        error.response?.data?.error || error.message || "something went wrong";
+      toast.error(errorMessage);
+      setIsLoading(false);
+    }
+  };
+  return (
+    <button onClick={handleSubscribe} className="btn btn-primary">
+      {isLoading && (
+        <span className="loading loading-spinner loading-xs"></span>
+      )}
+      Subscribe
+    </button>
+  );
 };
 
 export default ButtonCheckout;

@@ -13,6 +13,18 @@ const userSchema = new mongoose.Schema({
   image: {
     type: String,
   },
+  hasAccess: {
+    type: Boolean,
+    default: false,
+  },
+  // will be recieved from pmnt service to grant user access
+  customerId: {
+    type: String,
+  },
+  // for different tiers we will use
+  // planId: {
+  // type: String,
+  // },
   boards: [
     {
       type: mongoose.Schema.Types.ObjectId,
